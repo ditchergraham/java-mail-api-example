@@ -24,7 +24,6 @@ public class MailChecker {
             Folder inboxFolder = emailStore.getFolder("INBOX");
             inboxFolder.open(Folder.READ_ONLY);
 
-            // Get all the messages from the inbox
             Message messages[] = inboxFolder.getMessages();
 
             // Only fetch the top 3 messages for now
@@ -35,7 +34,6 @@ public class MailChecker {
                 System.out.println("Sent date: " + messages[i].getSentDate() + "\n");
             }
 
-            // Close the emailStore and inboxFolder
             inboxFolder.close();
             emailStore.close();
         } catch (NoSuchProviderException e) {
